@@ -210,3 +210,4 @@ __marimo__/
 *.pickle
 *.lock
 *.python-version
+notebooks/workshop_uv
