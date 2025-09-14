@@ -31,8 +31,9 @@ Go to uv home page and paste the correct commands into either Bash or powershell
 ### Running the scripts
 If you have cloned the github repository at https://github.com/tgaedt/workshop_uv and you have a working uv installation, you should be able to just run the scripts in the `scripts` folder by calling `uv run 1_intro_dataframes.py` (if you are inside the `scripts` folder). uv will automatically install all necessary dependencies into a local `.venv` environment. Note that the necessary dependencies are all declared in the `pyproject.toml` file in the root folder of this workshop.
 
-## Setting up a project from scratch with uv
 
+
+## Setting up a project from scratch with uv
 
 ### Initialize workshop project via uv
 Go to the root folder under which you would like to install the project folder
