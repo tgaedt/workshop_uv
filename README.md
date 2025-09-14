@@ -1,7 +1,16 @@
 # Workshop
 
+## Folder structure of the repository
+The repository contains four subfolders. The four folders contain the following items 
+
++ `Data Management Basics` contains data, python scripts and slides as shown by Dr. Matthias Hofmann in the first part of the workshop.
++ `data` contains calorimetry data and metadata which will be used for the demonstration of the Calocem package
++ `notebooks` contains Jupyter notebooks which can be opened using Google colab (see below)
++ `scripts` contains two Python scripts which were developed for a earlier version of this workshop. They are intended for local use with local data and could be run if you have a suitable virtual environment and have cloned the repository.
+
+
 ## Installation
-We have noticed during the workshop that in many instances an installation of any program on a managed computer is impossible.
+We have noticed during the workshop that in many instances an installation of any program on a managed computer is impossible. Therefore, it is mandatory to have an option to work with Python and access data without a local installation. Google colab is an attractive option in this scenario.
 
 ## Using Google Colab
 If you have a google account, you will also have access to Google colab (https://colab.google/). In google's own words: "Colab is a hosted Jupyter Notebook service that requires no setup to use and provides free access to computing resources, including GPUs and TPUs. Colab is especially well suited to machine learning, data science, and education."
@@ -32,7 +41,7 @@ Install packages via `uv add`
 `uv add pathlib`
 
 
-### Installation Spyder
+### Installation of Spyder (IDE)
 Spyder (https://www.spyder-ide.org/) is an IDE optimized for Python and scientific computation. It is inspired by matlab and comes with an open source license. Furthermore, we consider it to be beginner friendly. 
 
 Spyder will be installed via uv 

@@ -12,6 +12,7 @@ dependencies = [
     "pathlib>=1.0.1",
     "polars>=1.32.3",
     "pyarrow>=21.0.0",
+    "pyqt6>=6.9.1",
     "spyder-kernels>=3.0.5",
     "vegafusion>=2.0.2",
     "vl-convert-python>=1.8.0",

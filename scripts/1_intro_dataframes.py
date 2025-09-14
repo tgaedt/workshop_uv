@@ -100,20 +100,10 @@ labels = ["0.0-0.34", "0.34-0.38", "0.38-0.42", "0.42-0.46", "0.46-0.50", "0.50-
 df["wc_bin"] = pd.cut(df["wc"], bins=bins, labels = labels)
 
 #%%
-
-# loop over bins
-for name, group in df.groupby(["wc_bin"]):
-    fig, ax = plt.subplots()
-    ax.scatter(group["age"], group["strength"])
-    ax.set_title(name)
-    plt.show()
-    
-#%% 
-
 # demonstrate subplots
 fig, axs = plt.subplots(2,3, layout="tight")
 
-for (name, group), ax in zip(df.groupby("wc_bin"), axs.flatten()):
+for (name, group), ax in zip(df.groupby("wc_bin", observed=True), axs.flatten()):
     ax.scatter(group["age"], group["strength"], s=4)
     ax.set_title(name)
     ax.set_ylim(0,90)
@@ -145,7 +135,7 @@ def fit_exponential(df, xcol="wc", ycol="strength"):
     out = {"a": popt[0], "b": popt[1], "c": popt[2]}
     return pd.Series(out)
     
-fits = df.query("age < 60 and age >1 ").groupby("age").apply(lambda t: fit_exponential(t))
+fits = df.query("age < 60 and age >1 ").groupby("age").apply(lambda t: fit_exponential(t), include_groups=False)
 
 x = np.linspace(0.22, df.wc.max(),100)
 
@@ -157,7 +147,7 @@ for name, group in df.query("age < 60 and age > 1").groupby("age"):
     ax.scatter(group["wc"], group["strength"], s=8, alpha =0.2, label=name)
 
 plt.legend()
-plt.plot()
+plt.show()
 
 
 #%%
@@ -165,5 +155,6 @@ plt.plot()
 # print and save equations
 df_html = fits.to_html()
 
-with open("fits.html", "w") as f:
-    f.write(df_html)
+# the html file could be saved like this
+# with open("fits.html", "w") as f:
+#     f.write(df_html)

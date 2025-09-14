@@ -84,7 +84,12 @@ df_pl_ref = (
 
 import altair as alt
 alt.data_transformers.enable("vegafusion")
-alt.renderers.enable("png")
+
+# for use in interactive environments like Jupyter or VSCode uncomment this
+# alt.renderers.enable("png")
+
+# in scripts use this
+alt.renderers.enable("browser")
 
 chart = (
     df_pl_ref.plot.line(
