@@ -18,16 +18,20 @@ If you have a google account, you will also have access to Google colab (https:/
 For the notebooks in this workshop, we provide an "open in colab" badge which you can click to directly open the notebook in your colab environment.
 
 
-## UV
+## uv
 A consensus seems to be emerging that the program uv (https://docs.astral.sh/uv/) is becoming the de facto standard for package management (and more) in Python. If you do not need conda packages and you have the privilges to install software, we recommend to check out uv. Furthermore, we leave our brief installation instructions here for your reference. Much more detailed information is found on the uv homepage.
 
 Furthermore, to leverage the full potential of Python for scientific computing and data analysis, we strongly recommend that you have a running Python installation and a suitable IDE on your computer. 
-
 
 ### install uv 
 Go to uv home page and paste the correct commands into either Bash or powershell
 + For Windows `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
 + Linux `curl -LsSf https://astral.sh/uv/install.sh | sh`
+
+### Running the scripts
+If you have cloned the github repository at https://github.com/tgaedt/workshop_uv and you have a working uv installation, you should be able to just run the scripts in the `scripts` folder by calling `uv run 1_intro_dataframes.py` (if you are inside the `scripts` folder). uv will automatically install all necessary dependencies into a local `.venv` environment. Note that the necessary dependencies are all declared in the `pyproject.toml` file in the root folder of this workshop.
+
+## Setting up a project from scratch with uv
 
 
 ### Initialize workshop project via uv
@@ -41,7 +45,11 @@ Install packages via `uv add`
 `uv add pathlib`
 
 
-### Installation of Spyder (IDE)
+# IDEs
+To work with Python you only need a text editor and a Python installation. 
+However, if you work with Python, an integrated development environment (IDE) is a very useful tool. One important example which is not available in text editors is debugger. Notable IDEs for use with Python are PyCharm, VS Code, or Spyder (see below). 
+
+## Installation of Spyder (IDE)
 Spyder (https://www.spyder-ide.org/) is an IDE optimized for Python and scientific computation. It is inspired by matlab and comes with an open source license. Furthermore, we consider it to be beginner friendly. 
 
 Spyder will be installed via uv 
